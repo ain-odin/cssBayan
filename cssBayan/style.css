@@ -141,3 +141,50 @@ input {
 .accordion-item__input:checked ~ .accordion-item__meme {
     width: 40%;
 }
+
+/* Desktop */
+
+@media only screen and (min-width: 1200px){
+    .container {
+        max-width: 1000px;
+    }
+
+    .title {
+        font-size: 3em;
+        font-weight: 700;
+    }
+    
+    .accordion, .accordion-item, .accordion-item__label {
+        cursor: pointer;
+    }
+
+    .accordion-item__line {
+        margin: 1em 0;
+    }
+    
+    .subtitle {
+        font-size: 2em;
+        font-weight: 600;
+    }
+    
+    .subtitle__icon {
+        opacity: 0;
+    }
+
+    .accordion:hover .accordion-item .accordion-item__label .accordion-item__title > .subtitle {
+        color: var(--text-color-grey)
+    }
+    
+    .accordion:hover .accordion-item .accordion-item__label .accordion-item__title > .subtitle__icon {
+        opacity: 1;
+        filter: invert(30%) sepia(13%) saturate(0%) hue-rotate(185deg) brightness(83%) contrast(87%);
+    }
+
+    .accordion-item:hover .accordion-item__label .accordion-item__title > .subtitle__icon {
+        transform: rotate(90deg);
+    }
+    
+    .accordion-item:hover .accordion-item__label > .accordion-item__meme {
+        width: 40%;
+    }
+}
