@@ -4,3 +4,140 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+font-family: 'Poppins', sans-serif;
+}
+
+input {
+    appearance: none;
+}
+
+:root {
+    --text-color-grey: #4a4a49;
+    --text-color-yellow: #ffdb1e;
+    --text-color-drown : #9A794F;
+    --line-color: #dcdbe0;
+}
+
+.svg-color {
+    filter: invert(30%) sepia(13%) saturate(0%) hue-rotate(185deg) brightness(83%) contrast(87%);
+}
+
+/* Tablet and mosile */
+
+.container {
+    min-width: 600px;
+    margin: 0 auto;
+}
+
+@media only screen and (max-width: 600px){
+    .container {
+        max-width: 300px;
+    }
+}
+
+.bayan {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: 0;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.title {
+    font-size: 2.4em;
+    font-weight: 600;
+    color: var(--text-color-grey);
+
+    margin: 1% 0;
+}
+
+@media only screen and (max-width: 600px){
+    .title {
+        font-size: 2.2em;
+    }
+}
+
+
+.accordion {
+    width: 100%;
+}
+
+.accordion-item:active {
+    opacity: 0.7;
+}
+
+.accordion-item__line {
+    margin: 0.4em 0;
+
+    background-color: var(--line-color);
+    border: none;
+    height: 0.1em
+}
+
+.accordion-item__title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.subtitle {
+    font-size: 1.6em;
+    font-weight: 500;
+    color: var(--text-color-grey);
+
+    transition: color 1s ease-in-out
+}
+
+@media only screen and (max-width: 600px){
+    .subtitle {
+        font-size: 1.4em;
+    }
+}
+
+.subtitle__icon {
+    opacity: 1;
+    width: 1.6em;
+    height: 1.6em;
+    transform: rotate(45deg);
+
+    transition: all 1s ease-in-out;
+}
+
+@media only screen and (max-width: 600px){
+    .subtitle__icon {
+        width: 1.4em;
+        height: 1.4em;
+    }
+}
+
+.accordion-item__meme {
+    display: flex;
+    width: 0;
+    margin: 1em auto 0;
+
+    transition: all .8s ease-out;
+}
+
+.accordion-item__input:checked ~ .accordion-item__title > .subtitle {
+    color: var(--text-color-yellow);
+}
+
+.accordion-item__input:checked ~ .accordion-item__title > .subtitle__icon {
+    opacity: 1;
+    filter: invert(86%) sepia(94%) saturate(2810%) hue-rotate(331deg) brightness(98%) contrast(107%);
+
+    transform: rotate(90deg);
+}
+
+.accordion-item__input:checked ~ .accordion-item__meme {
+    width: 40%;
+}
